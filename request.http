@@ -4,31 +4,30 @@ GET https://anticona23-potential-halibut-jxpjr7vj9qv2pj59-8080.preview.app.githu
 ###
 GET {{server}}
 
-###
+### Listando todo
 GET {{server}}/cursos
 
-###
+### Agreagndo
 POST {{server}}/cursos
 Content-Type: application/json
 
-{"nombre": "Matematica", "creditos": 3}
+{"nombre": "Servicios Web 1", "credito": 3}
 
-###
+### Listando por codigo
 GET {{server}}/cursos/1
 
-###
-PATCH {{server}}/cursos/1
-
-{"nombre": "Matematica"}
-
-###
-GET {{server}}/cursos?size=2&page=0
+### Editando
+PATCH {{server}}/cursos/2
+{"nombre": "Quimica"}
 
 ###
-GET {{server}}/cursos?size=2&page=0&sort=creditos.desc
+GET {{server}}/cursos?size=3&page=0
 
 ###
-GET {{server}}/cursos?size=2&page=1&sort=creditos.desc
+GET {{server}}/cursos?size=1&page=0&sort=creditos.desc
 
 ###
-GET {{server}}/cursos/search/findByNombre?=Matematicas
+GET {{server}}/cursos?size=1&page=1&sort=creditos.desc
+
+###
+GET {{server}}/cursos/search/findByNombre?nombre=Matematica
