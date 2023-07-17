@@ -1,1 +1,34 @@
-GET https://anticona23-potential-halibut-jxpjr7vj9qv2pj59-8080.preview.app.github.dev/
+GET https://anticona23-potential-halibut-jxpjr7vj9qv2pj59-8080.preview.app.github.dev
+###
+@server = https://anticona23-potential-halibut-jxpjr7vj9qv2pj59-8080.preview.app.github.dev
+###
+GET {{server}}
+
+###
+GET {{server}}/cursos
+
+###
+POST {{server}}/cursos
+Content-Type: application/json
+
+{"nombre": "Matematica", "creditos": 3}
+
+###
+GET {{server}}/cursos/1
+
+###
+PATCH {{server}}/cursos/1
+
+{"nombre": "Matematica"}
+
+###
+GET {{server}}/cursos?size=2&page=0
+
+###
+GET {{server}}/cursos?size=2&page=0&sort=creditos.desc
+
+###
+GET {{server}}/cursos?size=2&page=1&sort=creditos.desc
+
+###
+GET {{server}}/cursos/search/findByNombre?=Matematicas
