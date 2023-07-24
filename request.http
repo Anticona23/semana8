@@ -14,11 +14,13 @@ Content-Type: application/json
 {"nombre": "Servicios Web 1", "credito": 3}
 
 ### Listando por codigo
-GET {{server}}/cursos/1
+GET {{server}}/cursos/5
 
 ### Editando
-PATCH {{server}}/cursos/2
-{"nombre": "Quimica"}
+PATCH {{server}}/cursos/5
+Content-Type: application/json
+
+{"creditos": "4"}
 
 ###
 GET {{server}}/cursos?size=3&page=0
