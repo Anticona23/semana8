@@ -7,29 +7,54 @@ GET {{server}}
 ### Listando todo
 GET {{server}}/cursos
 
-### Agreagndo
+### Agregando
 POST {{server}}/cursos
 Content-Type: application/json
 
-{"nombre": "Servicios Web 1", "credito": 3}
+{"nombre": "Pensamiento Creativo", "creditos": 2}
 
 ### Listando por codigo
-GET {{server}}/cursos/5
+GET {{server}}/cursos/52
 
 ### Editando
-PATCH {{server}}/cursos/5
+PATCH {{server}}/cursos/52
 Content-Type: application/json
 
-{"creditos": "4"}
+{"creditos": "2"}
 
 ###
 GET {{server}}/cursos?size=3&page=0
 
 ###
+
 GET {{server}}/cursos?size=1&page=0&sort=creditos.desc
 
 ###
+
 GET {{server}}/cursos?size=1&page=1&sort=creditos.desc
 
 ###
+
 GET {{server}}/cursos/search/findByNombre?nombre=Matematica
+
+#########################
+
+GET {{server}}/carreras
+
+### Agregando nueva Carrera
+POST {{server}}/carreras
+Content-Type: application/json
+
+{"nombre": "Marketing"}
+
+### Listando todo
+GET {{server}}/carreras
+
+### Listando por codigo
+GET {{server}}/carreras/2
+
+### Listando todos los cursos de una carrera por el codigo de carrera 
+GET {{server}}/carreras/1/cursos
+
+### Mostrando que curso pertenece a tal carrera ingresando el codigo del curso
+GET {{server}}/cursos/52/carrera
